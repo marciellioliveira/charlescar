@@ -14,7 +14,7 @@
   $textoSQL="INSERT INTO usuarios(nome, sobrenome, email, senha) VALUES ('".$primnome."','".$segnome."','".$em."','".$se."')";  
   $conecta->exec($textoSQL);
   
-  #Chamar página inicial aqui (Ainda tem que ver se for adm logar na pag adm, senão na pag normal)
+  header("Location: index.php");
   echo "<h1>Dados gravados com sucesso</h1>";
   }
   catch (PDOException $e)

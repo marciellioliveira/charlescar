@@ -47,7 +47,7 @@
           <div class="col-lg-12" id="login">
           
            <h1>Olá!</h1>
-           <form action="#" method="post" >  <!-- Login -->               
+           <form action="login_pdo.php" method="post" >  <!-- Login -->               
                
                   <div class="field-wrap">
                   <label>
@@ -113,8 +113,6 @@
           </form>
 
           </div>
-       
-               
          
           </div>
 
