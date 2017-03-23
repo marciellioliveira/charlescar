@@ -11,17 +11,31 @@
   $conecta->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
+ 
+    // grava dados na tabela usuarios
+      $textoSQL="INSERT INTO usuarios(nome, sobrenome, email, senha) VALUES ('".$primnome."','".$segnome."','".$em."','".$se."')";  
+      $conecta->exec($textoSQL);
 
-  
-  // grava dados
-  $textoSQL="INSERT INTO usuarios(nome, sobrenome, email, senha) VALUES ('".$primnome."','".$segnome."','".$em."','".$se."')";  
-  $conecta->exec($textoSQL);
-  
-  header("Location: index.php");
-  echo "<h1>Dados gravados com sucesso</h1>";
+      header("Location: index.php");  
+    
+ 
   }
   catch (PDOException $e)
   {
     echo "Falha na gravação...";
   }
 ?>
+
+<!--
+  $textSQL="SELECT * FROM clientes WHERE email='$em'";
+   if(mysqli_num_rows($sql)<0) {
+       //Se for <0, não tem cliente cadastrado. Então vai cadastrar.
+       $textoSQL="INSERT INTO clientes(nome, sobrenome, email, senha) VALUES ('".$primnome."','".$segnome."','".$em."','".$se."')";  
+      $conecta->exec($textoSQL);
+
+      // grava dados na tabela usuarios
+      $textoSQL="INSERT INTO usuarios(nome, sobrenome, email, senha) VALUES ('".$primnome."','".$segnome."','".$em."','".$se."')";  
+      $conecta->exec($textoSQL);
+    } 
+
+ -->

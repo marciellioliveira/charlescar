@@ -5,6 +5,7 @@
 ?>
 
 
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -99,7 +100,8 @@
           <span class="sr-only">Next</span>
         </a>
       </div> <!-- Fim slide --></div>
-
+    </div>
+    
      <br>
      <div class="container filtro">       
      
@@ -197,6 +199,13 @@
         <p>Desenvolvido por: 3Mosqueteiros</p>
       </div>
     </nav>
+
+
+
+
+
+
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
