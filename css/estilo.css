@@ -306,6 +306,15 @@ button#btnContactUs.btn.btn-primary.pull-right.btnColor{
     background-image: none;
     background-color: #179b77;
     border: 1px solid #179b77;
+}
 
+.fundo {
+  background-color: #179b77;
+}
 
+.fundo p {
+  text-align: center;
+  padding-top: 13px;
+  color: white;
+  font-weight: bold;
 }

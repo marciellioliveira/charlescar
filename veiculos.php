@@ -156,6 +156,11 @@
 
 </div>
 
+    <nav class="navbar navbar-default navbar-fixed-bottom fundo">
+      <div class="container">
+        <p>Desenvolvido por: 3Mosqueteiros</p>
+      </div>
+    </nav>
  
 
 
