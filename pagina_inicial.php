@@ -1,3 +1,10 @@
+<?php 
+
+  //http://forum.wmonline.com.br/topic/233701-pegar-valor-escolhido-pelo-usuario-no-option/
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -48,7 +55,8 @@
         <button type="submit" class="btn btn-default">Enviar</button>
       </form>
       
-        <li><a href="#">Contato</a></li>        
+        <li><a href="#">Contato</a></li>    
+        <li><a href="sair.php">Sair</a></li>      
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -96,64 +104,56 @@
      <div class="container filtro">       
      
       <div class="row">
-        <div class="col-xm-12 col-sm-3 modelos">          
+        <div class="col-xm-12 col-sm-3 modelos">   
          <h4>Modelos</h4>
-         <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Todos
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="#">CrossFox</a></li>
-            <li><a href="#">Fox</a></li>
-            <li><a href="#">Fusca</a></li>
-          </ul>
-        </div> <!-- Fim dropdown -->
+            <div class="form-group">              
+                <select id="modelo" name="modelo1" class="form-control" required="required">
+                  <option value="na" selected="">Escolha um:</option>
+                  <option value="md1-crossfox">CrossFox</option>
+                  <option value="md1-fox">Fox</option>
+                  <option value="md1-fusca">Fusca</option>
+                </select>
+             </div>       
         </div>
         <div class="col-xm-12 col-sm-3 categorias">
           <h4>Categoria</h4>
-         <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Todos
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="#">Hatch</a></li>
-            <li><a href="#">Sedan</a></li>
-            <li><a href="#">Cross</a></li>
-          </ul>
-        </div> <!-- Fim dropdown -->
+          <div class="form-group">              
+                <select id="categoria" name="categoria1" class="form-control" required="required">
+                  <option value="na" selected="">Escolha um:</option>
+                  <option value="cat1-hatch">Hatch</option>
+                  <option value="cat1-sedan">Sedan</option>
+                  <option value="cat1-cross">Cross</option>
+                </select>
+             </div>  
+           
         </div>
         <div class="col-xm-12 col-sm-3 valor">
           <h4>Preço</h4>
-         <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Todos
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="#">Até 40.000</a></li>
-            <li><a href="#">Até 50.000</a></li>
-            <li><a href="#">Até 60.000</a></li>
-          </ul>
-        </div> <!-- Fim dropdown -->
+          <div class="form-group">              
+                <select id="preco" name="preco1" class="form-control" required="required">
+                  <option value="na" selected="">Escolha um:</option>
+                  <option value="pr1-ate40">Até 40.000</option>
+                  <option value="pr1-ate50">Até 50.000</option>
+                  <option value="pr1-ate60">Até 60.000</option>
+                </select>
+             </div> 
+
         </div>
         <div class="col-xm-12 col-sm-3 ordem">
           <h4>Ordem</h4>
-         <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Todos
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="#">Mais visto</a></li>
-            <li><a href="#">Menor Preço</a></li>
-            <li><a href="#">Maior Preço</a></li>
-          </ul>
-        </div> <!-- Fim dropdown -->
+          <div class="form-group">              
+                <select id="ordem" name="ordem1" class="form-control" required="required">
+                  <option value="na" selected="">Escolha um:</option>
+                  <option value="ord-maisvisto">Mais Visto</option>
+                  <option value="ord-menorpreco">Menor Preço</option>
+                  <option value="ord-maiorpreco">Maior Preço</option>
+                </select>
+             </div> 
         </div>
+
+
       </div><!--row -->
-    </div> <!-- Container Filtro -->
+     </div> <!-- Container Filtro -->
  
     <div class="container">         
       
