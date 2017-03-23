@@ -65,7 +65,7 @@
 
                  <p class="forgot"><a href="#">Esqueceu sua senha??</a></p>
              
-               <button class="button button-block"/>Entrar</button>                   
+              <a href="#"> <button class="button button-block"/>Entrar</button>    </a>               
 
           </form>
 
@@ -76,7 +76,7 @@
           <h1>Cadastre-se!</h1>
           
         
-         <form method="POST" action="salva_usuarios.php"> <!-- Cadastrar -->                      
+         <form method="POST" id="cadastro" name="cadastro" action="grava.php"> <!-- Cadastrar -->                      
                 
           <div class="top-row">
             <div class="field-wrap">
