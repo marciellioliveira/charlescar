@@ -55,7 +55,7 @@
 </nav>
 
     <div class="container">   
-
+      <div class="row">
       <div id="carousel-example-generic" class="carousel slide slideImg" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -90,16 +90,106 @@
           <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
-      </div>
+      </div> <!-- Fim slide --></div>
 
-
+     <br>
+     <div class="container filtro">       
      
       <div class="row">
-        <div class="col-sm-4">.col-sm-4</div>
-        <div class="col-sm-4">.col-sm-4</div>
-        <div class="col-sm-4">.col-sm-4</div>
+        <div class="col-xm-12 col-sm-3 modelos">          
+         <h4>Modelos</h4>
+         <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Todos
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#">CrossFox</a></li>
+            <li><a href="#">Fox</a></li>
+            <li><a href="#">Fusca</a></li>
+          </ul>
+        </div> <!-- Fim dropdown -->
+        </div>
+        <div class="col-xm-12 col-sm-3 categorias">
+          <h4>Categoria</h4>
+         <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Todos
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#">Hatch</a></li>
+            <li><a href="#">Sedan</a></li>
+            <li><a href="#">Cross</a></li>
+          </ul>
+        </div> <!-- Fim dropdown -->
+        </div>
+        <div class="col-xm-12 col-sm-3 valor">
+          <h4>Preço</h4>
+         <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Todos
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#">Até 40.000</a></li>
+            <li><a href="#">Até 50.000</a></li>
+            <li><a href="#">Até 60.000</a></li>
+          </ul>
+        </div> <!-- Fim dropdown -->
+        </div>
+        <div class="col-xm-12 col-sm-3 ordem">
+          <h4>Ordem</h4>
+         <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Todos
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#">Mais visto</a></li>
+            <li><a href="#">Menor Preço</a></li>
+            <li><a href="#">Maior Preço</a></li>
+          </ul>
+        </div> <!-- Fim dropdown -->
+        </div>
+      </div><!--row -->
+    </div> <!-- Container Filtro -->
+ 
+    <div class="container">         
+      
+           <div class="jumbotron jbCor">
+
+           <div class="row mostraCarro">
+            <div class="col-xs-12 col-md-6">
+              <a href="#" class="thumbnail">
+                <img src="imagens/saveiro-cross-cd-1-6-msi--completo.png" alt="...">
+              </a>
+            </div>
+            <div class="col-xs-12 col-md-6">
+             <h1>Saveiro</h1>
+             <h5>Cross CD1.6 MSI - Completo</h5>
+             <h1>R$ 69.990,00</h1>
+             <p>Consulte condições de financiamento</p>
+            <p><a class="btn btn-primary btn-lg btnCor" href="#" role="button">Estou interessado</a></p>
+            </div>
+          </div>
+
+          <div class="row mostraCarro">
+            <div class="col-xs-12 col-md-6">
+              <a href="#" class="thumbnail">
+                <img src="imagens/saveiro-cross-cd-1-6-msi--completo.png" alt="...">
+              </a>
+            </div>
+            <div class="col-xs-12 col-md-6">
+             <h1>Saveiro</h1>
+             <h5>Cross CD1.6 MSI - Completo</h5>
+             <h1>R$ 69.990,00</h1>
+             <p>Consulte condições de financiamento</p>
+            <p><a class="btn btn-primary btn-lg btnCor" href="#" role="button">Estou interessado</a></p>
+            </div>
+          </div>
+            </div>         
       </div>
-    </div>
 
 
     <nav class="navbar navbar-default navbar-fixed-bottom fundo">

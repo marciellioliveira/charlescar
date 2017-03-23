@@ -151,10 +151,8 @@
             <p><a class="btn btn-primary btn-lg btnCor" href="#" role="button">Estou interessado</a></p>
             </div>
           </div>
-            </div>
-           
-
-</div>
+            </div>         
+      </div>
 
     <nav class="navbar navbar-default navbar-fixed-bottom fundo">
       <div class="container">
