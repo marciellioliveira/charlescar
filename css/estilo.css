@@ -248,3 +248,64 @@ button a:hover {
 button#btnContactUs.btn.btn-primary.pull-right.btnColor{
   background-color: #179b77;
 }
+
+.filtro {
+  border: 1px solid #179b77;
+  padding: 10px;
+  border-radius: 5px;
+  color: #179b77; 
+  background-color:#e6ffe6;
+}
+
+.container .mostraCarro {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+
+  color: black;
+  background-color:white;
+  border-bottom: 1px solid #179b77;
+}
+.container .mostraCarro h1{
+    text-align: left;
+    font-size: 30px;
+}
+.container .mostraCarro p{
+  font-size: 15px;
+  margin-top: -15px;
+}
+
+.container .mostraCarro .btnCor {
+  background-color: #179b77;
+  border: 1px solid #179b77;
+}
+
+.container .mostraCarro .btnCor:hover{
+   background-color:#009900;
+  border: 1px solid: #009900;
+  color: white;
+}
+
+.container .jbCor{
+  background-color: transparent;
+
+}
+
+.carousel img{
+    display:block;
+    margin:auto;
+}
+
+.slideImg{
+  background-color: #179b77;
+
+  
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none;
+    background-color: #179b77;
+    border: 1px solid #179b77;
+
+
+}
