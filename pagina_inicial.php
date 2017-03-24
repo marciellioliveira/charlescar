@@ -1,11 +1,3 @@
-<?php 
-
-  //http://forum.wmonline.com.br/topic/233701-pegar-valor-escolhido-pelo-usuario-no-option/
-
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -107,7 +99,7 @@
      
      <div class="container filtro">       
      
-     <form id="f_filtro" data-toggle="validator" role="form" method="post" action="filtrar.php">
+     <form id="f_filtro" data-toggle="validator" role="form" method="post" name="escolha" action="<?php echo $_SERVER['PHP_SELF'];?>">
       <div class="row">
         <div class="col-xm-12 col-sm-3 modelos">   
          <h4>Modelos</h4>
@@ -156,34 +148,33 @@
              </div> 
         </div>
 
-      <button type="submit" class="btn btn-primary">Enviar</button>
+      <button type="submit" class="btn btn-primary" name="escolha">Enviar</button>
       </div><!--row -->
       </form> <!-- Fechou Form -->
      </div> <!-- Container Filtro -->
  
     <div class="container">         
       
-           <div class="jumbotron jbCor">
-
+           <div class="jumbotron jbCor">        
            <div class="row mostraCarro">
             <div class="col-xs-12 col-md-6">
               <a href="#" class="thumbnail">
-                <img src="imagens/saveiro-cross-cd-1-6-msi--completo.png" alt="...">
+                <img src="imagens/saveiro-cross-cd-1-6-msi--completo.png" name="img" alt="...">
               </a>
             </div>
             <div class="col-xs-12 col-md-6">
-             <h1>Saveiro</h1>
+              
+             <h1><?php  $modelo ?></h1>
              <h5>Cross CD1.6 MSI - Completo</h5>
              <h1>R$ 69.990,00</h1>
              <p>Consulte condições de financiamento</p>
             <p><a class="btn btn-primary btn-lg btnCor" href="#" role="button">Estou interessado</a></p>
             </div>
           </div>
-
           <div class="row mostraCarro">
             <div class="col-xs-12 col-md-6">
               <a href="#" class="thumbnail">
-                <img src="imagens/saveiro-cross-cd-1-6-msi--completo.png" alt="...">
+                <img src="imagens/saveiro-cross-cd-1-6-msi--completo.png" name="img" alt="...">
               </a>
             </div>
             <div class="col-xs-12 col-md-6">
@@ -194,6 +185,21 @@
             <p><a class="btn btn-primary btn-lg btnCor" href="#" role="button">Estou interessado</a></p>
             </div>
           </div>
+          <div class="row mostraCarro">
+            <div class="col-xs-12 col-md-6">
+              <a href="#" class="thumbnail">
+                <img src="imagens/saveiro-cross-cd-1-6-msi--completo.png" name="img" alt="...">
+              </a>
+            </div>
+            <div class="col-xs-12 col-md-6">
+             <h1>Saveiro</h1>
+             <h5>Cross CD1.6 MSI - Completo</h5>
+             <h1>R$ 69.990,00</h1>
+             <p>Consulte condições de financiamento</p>
+            <p><a class="btn btn-primary btn-lg btnCor" href="#" role="button">Estou interessado</a></p>
+            </div>
+          </div>
+          
             </div>         
       </div>
 
@@ -203,17 +209,58 @@
         <p>Desenvolvido por: 3Mosqueteiros</p>
       </div>
     </nav>
-
-
-
-
-
-
-
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+
+
   </body>
 </html>
+
+<?php 
+if(isset($_POST['escolha'])){
+
+  //Salvando na variável, o name que o usuário selecionar no form que está na pagina inicial
+  $modelo=$_POST['modelo1'];
+  $categoria=$_POST['categoria1'];
+  $preco=$_POST['preco1'];
+  $ordem=$_POST['ordem1'];
+
+  try{
+  $conectar=new PDO('mysql:host=127.0.0.1;port=3306;dbname=concessionaria', 'root', '');
+ 
+  $conectar->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $dados=$conectar->query("SELECT * FROM veiculos");
+
+
+    if(($modelo == "md1-crossfox") && ($categoria == "na") && ($preco == "na") || ($modelo == "md1-fox") && 
+      ($categoria == "na") && ($preco == "na") || ($modelo == "md1-fusca") && 
+      ($categoria == "na") && ($preco == "na")) {
+      foreach($dados as $linha)
+      {
+        echo "$modelo";
+        break; 
+      }
+    }
+
+
+
+
+
+        
+        echo "<h5>$categoria</h5>";
+        echo "<h1>$preco</h1>";
+        echo "<p>$ordem</p>";
+
+ 
+  } // fecha try
+  
+  catch (PDOException $erro)
+  {
+    echo 'ERRO: ' . $erro->getMessage();
+    echo "Nao posso fazer a pesquisa";
+  }
+  
+}
+?>

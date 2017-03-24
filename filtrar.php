@@ -7,22 +7,39 @@
   $ordem=$_POST['ordem1'];
 
 
-  echo "Modelo: $modelo";
-  echo "<br>";
-  echo "Categoria: $categoria";
-  echo "<br>";
-  echo "Preço: $preco";
-  echo "<br>";
-  echo "Ordem: $ordem";
-  echo "<br>";
+  session_start();
+  if(isset($_SESSION['valida']))
+  {
+  try{
+  $conectar=new PDO('mysql:host=127.0.0.1;port=3306;dbname=concessionaria', 'root', '');
+ 
+  $conectar->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $dados=$conectar->query("SELECT * FROM veiculos");
+  
+  foreach($dados as $linha)
+  {
+  echo $linha['modelo']."----".$linha['categoria']."----".$linha['preco']."----".$linha['caminho_foto']."<br>";
+      
+      if($modelo != "na") {
 
-  if(($modelo != "na") && ($categoria != "na") && ($preco != "na") && ($ordem != "na")) {
-      echo "Mostra tudo";
-  } else {
-    //Mostrar só os que for diferente de "na"
+        
+
+      }
+
   }
-
-
-
-
+  } // fecha try
+  
+  catch (PDOException $erro)
+  {
+    echo 'ERRO: ' . $erro->getMessage();
+    echo "Nao posso fazer a pesquisa";
+  }
+  }
+  else
+  {
+    echo "<script>
+         alert('Esses dados não podem ser filtrados');
+       document.location.href=('pagina_inicial.php');
+       </script>";
+  }
 ?>

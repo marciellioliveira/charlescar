@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 23-Mar-2017 às 15:43
+-- Generation Time: 24-Mar-2017 às 21:00
 -- Versão do servidor: 10.1.19-MariaDB
 -- PHP Version: 7.0.13
 
@@ -27,14 +27,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `clientes` (
-  `id` int(40) NOT NULL,
   `nome` varchar(40) NOT NULL,
   `sobrenome` varchar(40) NOT NULL,
-  `cpf` varchar(40) NOT NULL,
-  `telefone` varchar(40) NOT NULL,
   `email` varchar(40) NOT NULL,
   `senha` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `clientes`
+--
+
+INSERT INTO `clientes` (`nome`, `sobrenome`, `email`, `senha`) VALUES
+('Marcielli', 'Oliveira', 'ma@gmail.com', '123');
 
 -- --------------------------------------------------------
 
@@ -43,13 +47,18 @@ CREATE TABLE `clientes` (
 --
 
 CREATE TABLE `usuarios` (
-  `id` int(10) NOT NULL,
   `nome` varchar(40) NOT NULL,
   `sobrenome` varchar(40) NOT NULL,
   `email` varchar(40) NOT NULL,
-  `senha` varchar(40) NOT NULL,
-  `telefone` varchar(20) NOT NULL
+  `senha` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`nome`, `sobrenome`, `email`, `senha`) VALUES
+('Marcielli', 'Oliveira', 'ma@gmail.com', '123');
 
 -- --------------------------------------------------------
 
@@ -58,20 +67,42 @@ CREATE TABLE `usuarios` (
 --
 
 CREATE TABLE `veiculos` (
-  `nomeModelo` varchar(40) NOT NULL,
-  `cor` varchar(40) NOT NULL,
-  `ano` int(5) NOT NULL,
-  `quilometragem` varchar(40) NOT NULL,
-  `portas` int(10) NOT NULL,
-  `combustivel` varchar(40) NOT NULL,
-  `cambio` varchar(40) NOT NULL,
-  `finaldaplaca` varchar(40) NOT NULL,
-  `opcionais` varchar(40) NOT NULL,
-  `observacoes` varchar(140) NOT NULL,
+  `modelo` varchar(40) NOT NULL,
+  `categoria` varchar(40) NOT NULL,
   `preco` varchar(40) NOT NULL,
-  `financiamento` varchar(40) NOT NULL,
   `caminho_foto` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `veiculos`
+--
+
+INSERT INTO `veiculos` (`modelo`, `categoria`, `preco`, `caminho_foto`) VALUES
+('CrossFox', 'Cross', 'R$ 15.000', 'nao'),
+('Fox', 'Cross', 'R$ 20.000', 'nao'),
+('Fusca', 'Sedan', 'R$ 35.000', 'nao'),
+('CrossFox', 'Hatch', 'R$100.000', 'nao'),
+('Fusca', 'Cross', 'R$ 40.000', 'nao'),
+('dsa', 'dsa', 'das', 'strangerthings-1.jpg'),
+('', '', '', ''),
+('teste', 'test', 'fsdfsd', 'strangerthings-1.jpg'),
+('outro teste', 'outro test', 'outro teste', '4b446800059631b4b7c0f0b8cb8c5f3e.jpg');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `clientes`
+--
+ALTER TABLE `clientes`
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- Indexes for table `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD UNIQUE KEY `email` (`email`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
