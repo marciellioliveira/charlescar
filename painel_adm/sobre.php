@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Cadastrar Veículo</title>
+    <title>Sobre Grupo</title>
 
     <!-- Bootstrap -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/estilo.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -20,7 +20,7 @@
   </head>
   <body>
 
-<nav class="navbar navbar-default">
+  <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -58,42 +58,30 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav> 
+    
+   <div class="container-fluid" style="background-color: white">
+  <h1 style="color:green"> Grupo!</h1>
+  <div class="row">
+    <div class="col-sm-4">
+      <a href="https://www.facebook.com/janaina.santos.98892?fref=ts"><img src="../imagens/janaina.jpg" class="img-circle" alt="Cinque Terre" width="304" height="236"></a>
+      <br>
+      Janaina Claudence
+    </div>
+    <div class="col-sm-4">
+     <a href="https://www.facebook.com/itsmaoliv"> <img src="../imagens/marcielli.jpg" class="img-circle" alt="Cinque Terre" width="304" height="236"></a>
+      <br>
+      Marcielli Oliveira
+    </div>
+    <div class="col-sm-4">
+     <a href="https://www.facebook.com/vinipeix20?fref=ts"> <img src="../imagens/vinicius.jpg" class="img-circle" alt="Cinque Terre" width="304" height="236"></a>
+      <br>
+      Vinicius Peixoto
+    </div>
 
-    <div class="jumbotron">
+  </div>
+</div>
 
-      <div class="container">
-      <div class="row">
 
-        <h2>Cadastrar</h2>
-
-       <form action="cadastro-veiculo.php" method="post" >  <!-- Login -->               
-               
-        <div class="field-wrap">
-        <h4>Modelo</h4>
-        <input type="text" class="form-control" name="modelo1"/>
-        </div>   
-
-        <div class="field-wrap">
-        <h4>Categoria</h4>
-        <input type="text" class="form-control" name="categoria1"/>
-        </div>   
-
-        <div class="field-wrap">
-        <h4>Preço</h4>
-        <input type="text" class="form-control" name="preco1"/>
-        </div>   
-
-        <div class="field-wrap">
-        <h4>Upload Foto</h4>
-        <input type="file" class="form-control" name="uploadfoto1"/>
-
-        </div>  
-          <button type="submit" class="btn btn-default">Enviar</button>
-
-        </form>
-      </div>
-      </div>
-      </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

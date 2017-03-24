@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Cadastrar Veículo</title>
+    <title>Inicio</title>
 
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +20,7 @@
   </head>
   <body>
 
-<nav class="navbar navbar-default">
+  <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -59,41 +59,25 @@
   </div><!-- /.container-fluid -->
 </nav> 
 
-    <div class="jumbotron">
+          <div class="jumbotron">
+            
+            <div class="container">             
 
-      <div class="container">
-      <div class="row">
+              <div class="col-xs-12 col-md-6">
+              <a href="#" class="thumbnail">
+                <img src="../imagens/2.png" name="img" alt="...">
+              </a>
+            </div>
 
-        <h2>Cadastrar</h2>
+            </div>
 
-       <form action="cadastro-veiculo.php" method="post" >  <!-- Login -->               
-               
-        <div class="field-wrap">
-        <h4>Modelo</h4>
-        <input type="text" class="form-control" name="modelo1"/>
-        </div>   
+          </div>
 
-        <div class="field-wrap">
-        <h4>Categoria</h4>
-        <input type="text" class="form-control" name="categoria1"/>
-        </div>   
 
-        <div class="field-wrap">
-        <h4>Preço</h4>
-        <input type="text" class="form-control" name="preco1"/>
-        </div>   
+     
 
-        <div class="field-wrap">
-        <h4>Upload Foto</h4>
-        <input type="file" class="form-control" name="uploadfoto1"/>
 
-        </div>  
-          <button type="submit" class="btn btn-default">Enviar</button>
 
-        </form>
-      </div>
-      </div>
-      </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
