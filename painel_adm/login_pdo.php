@@ -11,7 +11,7 @@ try {
  #  $conn = new PDO('mysql:host=localhost;dbname=concessionaria', 'root', '');
    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   
-   $consulta = $conn->query("SELECT * FROM usuarios WHERE email='$em' AND senha='$se'");
+   $consulta = $conn->query("SELECT * FROM adm WHERE email='$em' AND senha='$se'");
    $linha = $consulta->fetch(PDO::FETCH_ASSOC);
    
    if ($linha>0)

@@ -53,7 +53,7 @@
         <button type="submit" class="btn btn-default">Enviar</button>
       </form>     
         
-        <li><a href="../sair.php">Sair</a></li>      
+        <li><a href="sair.php">Sair</a></li>      
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

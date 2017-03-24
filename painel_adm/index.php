@@ -17,8 +17,8 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Login</title>
  
-    <link href='../http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="../https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
     <!-- Bootstrap -->
    
@@ -78,7 +78,7 @@
           <h1>Cadastre-se!</h1>
           
         
-         <form method="POST" id="cadastro" name="cadastro" action="grava.php"> <!-- Cadastrar -->                      
+         <form method="POST" id="cadastro" name="cadastro" action="grava_adm.php"> <!-- Cadastrar -->                      
                 
           <div class="top-row">
             <div class="field-wrap">
@@ -125,11 +125,11 @@
 
 
    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
-    <script src="../js/index.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
 
