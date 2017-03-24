@@ -103,8 +103,11 @@
     </div>
     
      <br>
+
+     
      <div class="container filtro">       
      
+     <form id="f_cadastro" data-toggle="validator" role="form" method="post" action="gravar.php">
       <div class="row">
         <div class="col-xm-12 col-sm-3 modelos">   
          <h4>Modelos</h4>
@@ -153,8 +156,9 @@
              </div> 
         </div>
 
-
+      <button type="submit" class="btn btn-primary">Enviar</button>
       </div><!--row -->
+      </form> <!-- Fechou Form -->
      </div> <!-- Container Filtro -->
  
     <div class="container">         

@@ -282,10 +282,22 @@ button#btnContactUs.btn.btn-primary.pull-right.btnColor{
 
 .container .mostraCarro .btnCor:hover{
    background-color:#009900;
+   border: 1px solid: #009900;
+   color: white;
+}
+
+button.btn-primary{ /*Botão Enviar do formulario Modelos, Categoria, Preço e Ordem*/
+  background-color: #179b77;
+  border: 1px solid #179b77;
+  float: right;
+  margin-right: 15px;
+}
+
+button.btn-primary:hover{
+  background-color:#009900;
   border: 1px solid: #009900;
   color: white;
 }
-
 
 
 .container .jbCor{
