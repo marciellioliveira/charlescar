@@ -107,7 +107,7 @@
      
      <div class="container filtro">       
      
-     <form id="f_cadastro" data-toggle="validator" role="form" method="post" action="gravar.php">
+     <form id="f_filtro" data-toggle="validator" role="form" method="post" action="filtrar.php">
       <div class="row">
         <div class="col-xm-12 col-sm-3 modelos">   
          <h4>Modelos</h4>
