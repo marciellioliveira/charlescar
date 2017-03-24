@@ -12,7 +12,7 @@
 
    	
         // grava dados na tabela veiculos
-$textoSQL="INSERT INTO veiculos(modelo, categoria, preco, caminho_foto) VALUES ('".$modelo."','".$categoria."','".$preco."','".$uploaddafoto."')";  
+      $textoSQL="INSERT INTO veiculos(modelo, categoria, preco, caminho_foto) VALUES ('".$modelo."','".$categoria."','".$preco."','".$uploaddafoto."')";  
       $conecta->exec($textoSQL);
 
 

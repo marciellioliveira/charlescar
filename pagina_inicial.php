@@ -1,3 +1,59 @@
+<?php 
+if(isset($_POST['escolha'])){
+
+  //Salvando na variável, o name que o usuário selecionar no form que está na pagina inicial
+  $modelo=$_POST['modelo1'];
+  $categoria=$_POST['categoria1'];
+  $preco=$_POST['preco1'];
+  $ordem=$_POST['ordem1'];
+  try{
+  $conectar=new PDO('mysql:host=127.0.0.1;port=3306;dbname=concessionaria', 'root', '');
+ 
+  $conectar->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $dados=$conectar->query("SELECT * FROM veiculos");
+
+  $xml = new XMLWriter;
+    
+  $xml->openMemory();
+
+  $xml->startDocument( '1.0' , 'iso-8859-1' );
+
+  $xml->startElement("veiculos");
+
+  foreach($dados as $linha){
+    
+    $xml->startElement("veiculos");
+
+    $xml->writeElement("modelo", $linha['modelo']); 
+    $xml->writeElement("categoria", $linha['categoria']);
+    $xml->writeElement("preco", $linha['preco']);
+
+    $xml->endElement();
+    
+  } // fecha laço FOR
+  $xml->endElement();
+
+  $file = fopen('veiculos.xml','w+');
+  fwrite($file,$xml->outputMemory(true));
+  fclose($file);
+  
+  if (file_exists('veiculos.xml')) {
+    
+  } else {
+    echo "Arquivo não foi criado!";
+  }
+      
+ 
+  } // fecha try
+  
+  catch (PDOException $erro)
+  {
+    echo 'ERRO: ' . $erro->getMessage();
+    echo "Nao posso fazer a pesquisa";
+  }
+  
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -29,6 +85,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+
+      
       <a class="navbar-brand" href="pagina_inicial.php">CharlesCar</a>
     </div>
 
@@ -100,15 +158,16 @@
      <div class="container filtro">       
      
      <form id="f_filtro" data-toggle="validator" role="form" method="post" name="escolha" action="<?php echo $_SERVER['PHP_SELF'];?>">
+     
       <div class="row">
         <div class="col-xm-12 col-sm-3 modelos">   
          <h4>Modelos</h4>
             <div class="form-group">              
                 <select id="modelo" name="modelo1" class="form-control" required="required">
-                  <option value="na" selected="">Escolha um:</option>
-                  <option value="md1-crossfox">CrossFox</option>
-                  <option value="md1-fox">Fox</option>
-                  <option value="md1-fusca">Fusca</option>
+                  <option value="na" selected disabled>Escolha um:</option>
+                  <option value="Crossfox">CrossFox</option>
+                  <option value="Fox">Fox</option>
+                  <option value="Fusca">Fusca</option>
                 </select>
              </div>       
         </div>
@@ -116,10 +175,10 @@
           <h4>Categoria</h4>
           <div class="form-group">              
                 <select id="categoria" name="categoria1" class="form-control" required="required">
-                  <option value="na" selected="">Escolha um:</option>
-                  <option value="cat1-hatch">Hatch</option>
-                  <option value="cat1-sedan">Sedan</option>
-                  <option value="cat1-cross">Cross</option>
+                  <option value="na" selected disabled>Escolha um:</option>
+                  <option value="Hatch">Hatch</option>
+                  <option value="Sedan">Sedan</option>
+                  <option value="Cross">Cross</option>
                 </select>
              </div>  
            
@@ -128,7 +187,7 @@
           <h4>Preço</h4>
           <div class="form-group">              
                 <select id="preco" name="preco1" class="form-control" required="required">
-                  <option value="na" selected="">Escolha um:</option>
+                  <option value="na" selected disabled>Escolha um:</option>
                   <option value="pr1-ate40">Até 40.000</option>
                   <option value="pr1-ate50">Até 50.000</option>
                   <option value="pr1-ate60">Até 60.000</option>
@@ -140,16 +199,17 @@
           <h4>Ordem</h4>
           <div class="form-group">              
                 <select id="ordem" name="ordem1" class="form-control" required="required">
-                  <option value="na" selected="">Escolha um:</option>
+                  <option value="na" selected disabled>Escolha um:</option>
                   <option value="ord-maisvisto">Mais Visto</option>
                   <option value="ord-menorpreco">Menor Preço</option>
                   <option value="ord-maiorpreco">Maior Preço</option>
                 </select>
              </div> 
         </div>
-
-      <button type="submit" class="btn btn-primary" name="escolha">Enviar</button>
-      </div><!--row -->
+</div><!--row -->
+      <button type="submit" class="btn btn-primary" name="escolha" >Enviar</button>
+      
+    
       </form> <!-- Fechou Form -->
      </div> <!-- Container Filtro -->
  
@@ -163,43 +223,19 @@
               </a>
             </div>
             <div class="col-xs-12 col-md-6">
-              
-             <h1><?php  $modelo ?></h1>
-             <h5>Cross CD1.6 MSI - Completo</h5>
-             <h1>R$ 69.990,00</h1>
+             <h2><?php echo $modelo ?></h2>
+             <br>
+             <h4><?php echo $categoria ?></h4>
+             <br><br><br>
              <p>Consulte condições de financiamento</p>
-            <p><a class="btn btn-primary btn-lg btnCor" href="#" role="button">Estou interessado</a></p>
-            </div>
-          </div>
-          <div class="row mostraCarro">
-            <div class="col-xs-12 col-md-6">
-              <a href="#" class="thumbnail">
-                <img src="imagens/saveiro-cross-cd-1-6-msi--completo.png" name="img" alt="...">
-              </a>
-            </div>
-            <div class="col-xs-12 col-md-6">
-             <h1>Saveiro</h1>
-             <h5>Cross CD1.6 MSI - Completo</h5>
-             <h1>R$ 69.990,00</h1>
-             <p>Consulte condições de financiamento</p>
-            <p><a class="btn btn-primary btn-lg btnCor" href="#" role="button">Estou interessado</a></p>
-            </div>
-          </div>
-          <div class="row mostraCarro">
-            <div class="col-xs-12 col-md-6">
-              <a href="#" class="thumbnail">
-                <img src="imagens/saveiro-cross-cd-1-6-msi--completo.png" name="img" alt="...">
-              </a>
-            </div>
-            <div class="col-xs-12 col-md-6">
-             <h1>Saveiro</h1>
-             <h5>Cross CD1.6 MSI - Completo</h5>
-             <h1>R$ 69.990,00</h1>
-             <p>Consulte condições de financiamento</p>
-            <p><a class="btn btn-primary btn-lg btnCor" href="#" role="button">Estou interessado</a></p>
+
+            <p><a class="btn btn-primary btn-lg btnCor" href="veiculos.xml" download="veiculos" role="button" >Estou interessado</a></p>
             </div>
           </div>
           
+        
+          </div>
+          </div>
             </div>         
       </div>
 
@@ -218,49 +254,3 @@
   </body>
 </html>
 
-<?php 
-if(isset($_POST['escolha'])){
-
-  //Salvando na variável, o name que o usuário selecionar no form que está na pagina inicial
-  $modelo=$_POST['modelo1'];
-  $categoria=$_POST['categoria1'];
-  $preco=$_POST['preco1'];
-  $ordem=$_POST['ordem1'];
-
-  try{
-  $conectar=new PDO('mysql:host=127.0.0.1;port=3306;dbname=concessionaria', 'root', '');
- 
-  $conectar->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $dados=$conectar->query("SELECT * FROM veiculos");
-
-
-    if(($modelo == "md1-crossfox") && ($categoria == "na") && ($preco == "na") || ($modelo == "md1-fox") && 
-      ($categoria == "na") && ($preco == "na") || ($modelo == "md1-fusca") && 
-      ($categoria == "na") && ($preco == "na")) {
-      foreach($dados as $linha)
-      {
-        echo "$modelo";
-        break; 
-      }
-    }
-
-
-
-
-
-        
-        echo "<h5>$categoria</h5>";
-        echo "<h1>$preco</h1>";
-        echo "<p>$ordem</p>";
-
- 
-  } // fecha try
-  
-  catch (PDOException $erro)
-  {
-    echo 'ERRO: ' . $erro->getMessage();
-    echo "Nao posso fazer a pesquisa";
-  }
-  
-}
-?>

@@ -43,11 +43,7 @@
   {
 
 
-   include("funcao.html");
-    
-
-
-   # echo "Falha na gravação...";
+  echo "Falha na gravação...";
   }
 ?>
 
