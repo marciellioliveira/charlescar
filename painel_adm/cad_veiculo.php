@@ -39,9 +39,7 @@
         <li><a href="pagina_inicial.php">Início <span class="sr-only">(current)</span></a></li>
         <li><a href="sobre.php">Sobre</a></li>
         <li><a href="cad_veiculo.php">Cadastrar Veículo</a></li>
-        <li><a href="alt_veiculo.php">Alterar Veículo</a></li>
-        <li><a href="del_veiculo.php">Deletar Veículo</a></li>
-        <li><a href="cons_veiculo.php">Consultar Veículo</a></li>
+       
       </ul>
 
       

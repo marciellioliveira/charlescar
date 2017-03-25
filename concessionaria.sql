@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 24-Mar-2017 às 21:00
+-- Generation Time: 25-Mar-2017 às 00:52
 -- Versão do servidor: 10.1.19-MariaDB
 -- PHP Version: 7.0.13
 
@@ -23,6 +23,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `adm`
+--
+
+CREATE TABLE `adm` (
+  `nome` varchar(40) NOT NULL,
+  `sobrenome` varchar(40) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `senha` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `adm`
+--
+
+INSERT INTO `adm` (`nome`, `sobrenome`, `email`, `senha`) VALUES
+('Joelma', 'Juliana', 'jo@gmail.com', '123');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `clientes`
 --
 
@@ -38,6 +58,8 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`nome`, `sobrenome`, `email`, `senha`) VALUES
+('Dener', 'Carvalho', 'dener@gmail.com', '123'),
+('Joelma', 'Juliana', 'jo@gmail.com', '123'),
 ('Marcielli', 'Oliveira', 'ma@gmail.com', '123');
 
 -- --------------------------------------------------------
@@ -58,6 +80,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`nome`, `sobrenome`, `email`, `senha`) VALUES
+('Dener', 'Carvalho', 'dener@gmail.com', '123'),
+('Joelma', 'Juliana', 'jo@gmail.com', '123'),
 ('Marcielli', 'Oliveira', 'ma@gmail.com', '123');
 
 -- --------------------------------------------------------
@@ -86,11 +110,18 @@ INSERT INTO `veiculos` (`modelo`, `categoria`, `preco`, `caminho_foto`) VALUES
 ('dsa', 'dsa', 'das', 'strangerthings-1.jpg'),
 ('', '', '', ''),
 ('teste', 'test', 'fsdfsd', 'strangerthings-1.jpg'),
-('outro teste', 'outro test', 'outro teste', '4b446800059631b4b7c0f0b8cb8c5f3e.jpg');
+('outro teste', 'outro test', 'outro teste', '4b446800059631b4b7c0f0b8cb8c5f3e.jpg'),
+('Teste', 'teste', 'teste', 'saveiro-cross-cd-1-6-msi--completo.png');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `adm`
+--
+ALTER TABLE `adm`
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `clientes`

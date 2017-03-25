@@ -6,11 +6,26 @@ if(isset($_POST['escolha'])){
   $categoria=$_POST['categoria1'];
   $preco=$_POST['preco1'];
   $ordem=$_POST['ordem1'];
+
   try{
   $conectar=new PDO('mysql:host=127.0.0.1;port=3306;dbname=concessionaria', 'root', '');
  
   $conectar->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $dados=$conectar->query("SELECT * FROM veiculos");
+
+  foreach($dados as $linha)
+  {
+  #echo $linha['modelo'];
+  #echo "<br>";
+
+  $model=$linha['modelo'];
+  $categ=$linha['categoria'];
+  $pre=$linha['preco'];
+  $cam_foto=$linha['caminho_foto'];
+
+
+  }
+
 
   $xml = new XMLWriter;
     
@@ -164,7 +179,7 @@ if(isset($_POST['escolha'])){
          <h4>Modelos</h4>
             <div class="form-group">              
                 <select id="modelo" name="modelo1" class="form-control" required="required">
-                  <option value="na" selected disabled>Escolha um:</option>
+                  <option value="na" >Escolha um:</option>
                   <option value="Crossfox">CrossFox</option>
                   <option value="Fox">Fox</option>
                   <option value="Fusca">Fusca</option>
@@ -175,7 +190,7 @@ if(isset($_POST['escolha'])){
           <h4>Categoria</h4>
           <div class="form-group">              
                 <select id="categoria" name="categoria1" class="form-control" required="required">
-                  <option value="na" selected disabled>Escolha um:</option>
+                  <option value="na" >Escolha um:</option>
                   <option value="Hatch">Hatch</option>
                   <option value="Sedan">Sedan</option>
                   <option value="Cross">Cross</option>
@@ -187,7 +202,7 @@ if(isset($_POST['escolha'])){
           <h4>Preço</h4>
           <div class="form-group">              
                 <select id="preco" name="preco1" class="form-control" required="required">
-                  <option value="na" selected disabled>Escolha um:</option>
+                  <option value="na" >Escolha um:</option>
                   <option value="pr1-ate40">Até 40.000</option>
                   <option value="pr1-ate50">Até 50.000</option>
                   <option value="pr1-ate60">Até 60.000</option>
@@ -199,7 +214,7 @@ if(isset($_POST['escolha'])){
           <h4>Ordem</h4>
           <div class="form-group">              
                 <select id="ordem" name="ordem1" class="form-control" required="required">
-                  <option value="na" selected disabled>Escolha um:</option>
+                  <option value="na" >Escolha um:</option>
                   <option value="ord-maisvisto">Mais Visto</option>
                   <option value="ord-menorpreco">Menor Preço</option>
                   <option value="ord-maiorpreco">Maior Preço</option>
@@ -219,14 +234,16 @@ if(isset($_POST['escolha'])){
            <div class="row mostraCarro">
             <div class="col-xs-12 col-md-6">
               <a href="#" class="thumbnail">
-                <img src="imagens/saveiro-cross-cd-1-6-msi--completo.png" name="img" alt="...">
+                <img src="imagens/<?php echo $cam_foto ?>" name="img" alt="...">
               </a>
             </div>
             <div class="col-xs-12 col-md-6">
-             <h2><?php echo $modelo ?></h2>
+             <h2><?php echo $model ?></h2>
              <br>
-             <h4><?php echo $categoria ?></h4>
-             <br><br><br>
+             <h4><?php echo $categ ?></h4>
+             <br><br>
+             <h4><?php echo $pre ?></h4>
+             <br><br>
              <p>Consulte condições de financiamento</p>
 
             <p><a class="btn btn-primary btn-lg btnCor" href="veiculos.xml" download="veiculos" role="button" >Estou interessado</a></p>
